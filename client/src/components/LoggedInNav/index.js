@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import ReorderIcon from '@material-ui/icons/Reorder';
 import Auth from '../../utils/Auth';
+import Logo from "../../assets/logo.png";
 
 function LoggedInNavbar() {
     const [expandNavBar, setExpandNavBar] = useState(false);
@@ -17,6 +18,7 @@ function LoggedInNavbar() {
                 <button onClick={() => { setExpandNavBar((prev) => !prev); }}> < ReorderIcon /> </button>
             </div>
             <div className='links'>
+                <Link to="/"> <img className="logo" src={Logo} alt="company logo" /> </Link>
                 <Link to='/dashboard' id="cubic"> <span title="Dahsboard"> Dahsboard </span>  </Link>
                 <Link to='/savedrecipes' id="cubic"> <span title="Recipes"> Recipes </span> </Link>
                 <Link to='/profile' id="cubic"> <span title="Profile"> Profile </span>  </Link>

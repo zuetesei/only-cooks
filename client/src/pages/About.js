@@ -1,8 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import OnlyCooks from '../assets/onlycooks.png';
 import '../styles/About.css';
+// import Container from "react-bootstrap/Container";
+// import StripeCheckout from 'react-stripe-checkout';
+// import axios from 'axios';
 
 function About() {
+    // object
+    // const [donation] = useState({
+    //     name: "Donation",
+    //     price: 500,
+    //     description: 'Small donation'
+    // })
+    // async function handleToken(token, addresses) {
+    //     const response = await axios.post('http://localhost:3000/checkout', { token, donation })
+    //     // take response
+    //     console.log(response.status)
+    //     let error, status
+    //     try {
+    //     } catch (error) {
+    //         console.log(error)
+    //     }
+    // }
+
     return (
         <div className='about-section'>
             <img className="only-cooks-logo" src={OnlyCooks} alt="Only Cooks logo"></img>
@@ -16,7 +36,27 @@ function About() {
             <a href="https://github.com/jonathonb1"> Jonathon Biala </a>,
             <a href="https://github.com/ryanpjhickey"> Ryan Hickey </a> &
             <a href="https://github.com/zuetesei"> Zue Tesei </a>
+
+            {/* <div className='donate'>
+                <Container>
+                    <h2> Donate </h2>
+                    <h3> Do you like what we do and would like to support? Please consider donating. </h3>
+                    <div className='form-group container'>
+                        <StripeCheckout
+                            className='center'
+                            stripeKey="pk_test_51MCegRHNHirOlOeXhAaOeJsW4Inb4cB6s7TPew0b5OA2jWJtZtvCqBdu36zp9VXuM7AdroPmbzE2tRl8swTzHBxO00AUuwpY78"
+                            token={handleToken}
+                            amount={donation.price}
+                            name={donation.name}
+                            billingAddress
+                            shippingAddress
+                        />
+                    </div>
+                </Container>
+            </div> */}
         </div>
+
+
     )
 }
 

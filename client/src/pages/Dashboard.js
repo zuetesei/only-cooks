@@ -16,7 +16,7 @@ function Dashboard() {
         return <div>not login</div>
     }
     return (
-        <div className='dashboard my-5'>
+        <div className='dashboard'>
             <Container>
                 <Row>
                     <Col sm={8} className='userFeed'>

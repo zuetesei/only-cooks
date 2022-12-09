@@ -10,7 +10,7 @@ import UserRecipes from '../components/UserRecipes';
 function UserProfile() {
 
     return (
-        <Container className="my-5">
+        <Container className="profile">
             <Row>
                 <Col sm={4}>
                     <UserCard />
