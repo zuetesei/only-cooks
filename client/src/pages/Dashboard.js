@@ -13,25 +13,24 @@ import '../styles/Dashboard.css';
 
 function Dashboard() {
     if (!Auth.loggedIn()) {
-        return <div>not login</div>
-    }
+        return (
+            <div className='dashboard my-5'>
+                <Container>
+                    <Row>
+                        <Col sm={8} className='userFeed'>
+                            <AllRecipes />
 
-    return (
-        <div className='dashboard my-5'>
-            <Container>
-                <Row>
-                    <Col sm={8} className='userFeed'>
-                        <AllRecipes />
-                    </Col>
-                    <Col sm={4} className='userInfo'>
-                        <UserCard />
-                        <AddForm />
-                        <UserRecipes />
-                    </Col>
-                </Row>
-            </Container>
-        </div>
-    )
+                        </Col>
+                        <Col sm={4} className='userInfo'>
+                            <UserCard />
+                            <AddForm />
+                            <UserRecipes />
+                        </Col>
+                    </Row>
+                </Container>
+            </div>
+        )
+    }
 }
 
 export default Dashboard;

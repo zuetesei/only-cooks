@@ -23,8 +23,6 @@ function Nav() {
         <Link id="cubic" to="/"> <span title="Home"> Home </span> </Link>
         <Link id="cubic" to="/signup"> <span title="Sign Up"> Sign Up </span> </Link>
         <Link id="cubic" to="/about"> <span title="About"> About </span> </Link>
-        {/* <Link to="/recipes"> Add Recipe </Link>
-        <Link to="/myrecipes"> My Recipes </Link> */}
       </div>
     </div>
   );

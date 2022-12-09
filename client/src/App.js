@@ -43,6 +43,40 @@ const authLink = setContext((_, { headers }) => {
   };
 });
 
+// function App() {
+//   // const { data } = useQuery(IS_LOGGED_IN)
+
+//   if (localStorage.getItem("id_token") === null)
+//     return (
+//       <ApolloProvider client={client}>
+//         <Router>
+//           {/* {data ? <LoggedInNav /> : <Nav />} */}
+//           <Nav />
+//           <Routes>
+//             <Route path="/" element={<Home />} />
+//             <Route path="/signup" element={<Signup />} />
+//             <Route path="/about" element={<About />} />
+//           </Routes>
+//           <Footer />
+//         </Router>
+//       </ApolloProvider >
+//     )
+//   else return (
+//     <ApolloProvider client={client}>
+//       <Router>
+//         {/* {data ? <LoggedInNav /> : <Nav />} */}
+//         <LoggedInNav />
+//         <Routes>
+
+//           <Route path="/dashboard" element={<Dashboard />} />
+//           <Route path="/profile" element={<Profile />} />
+//           <Route path="/savedrecipes" element={<SavedRecipes />} />
+//         </Routes>
+//         <Footer />
+//       </Router>
+//     </ApolloProvider >
+//   )
+// }
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 

@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 
 function LogInForm() {
     return (
-        <div class="logform Auth-form-home">
+        <div className="logform Auth-form-home">
             <h2> Log In to See What's Cookin 🍳 </h2>
             <Form className='loginForm'>
                 <Form.Group className='mb-3' controlId='formGroupEmail'>

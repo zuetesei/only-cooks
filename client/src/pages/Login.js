@@ -44,7 +44,6 @@ const Login = (props) => {
         });
     };
 
-    // if (authMode === 'signin') {}
     return (
         <div className="Auth-form-container">
             <form name="login" className="Auth-form" onSubmit={handleFormSubmit}>
