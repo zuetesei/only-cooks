@@ -17,7 +17,7 @@ function LoggedInNavbar() {
                 <button onClick={() => { setExpandNavBar((prev) => !prev); }}> < ReorderIcon /> </button>
             </div>
             <div className='links'>
-                <Link to='/'> Dahsboard </Link>
+                <Link to='/dashboard'> Dahsboard </Link>
                 <Link to='/savedrecipes'> Recipes </Link>
                 <Link to='/profile'> Profile </Link>
                 <Link to='/' onClick={Auth.logout}> Logout </Link>
