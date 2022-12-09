@@ -35,11 +35,11 @@ function LogInForm() {
             <Form className='loginForm' onSubmit={formHandler}>
                 <Form.Group className='mb-3' controlId='formGroupEmail'>
                     <Form.Label> Email Address: </Form.Label>
-                    <Form.Control type='email' placeholder='Your Email' />
+                    <Form.Control type='email' placeholder='Your Email' name='email' />
                 </Form.Group>
                 <Form.Group className='mb-3'>
                     <Form.Label> Password: </Form.Label>
-                    <Form.Control type='password' placeholder='Your Password' />
+                    <Form.Control type='password' placeholder='Your Password' name='password' />
                 </Form.Group>
                 <Button id='cubic' type='submit' className="btn btn-primary"> Log In </Button>
             </Form>
