@@ -5,12 +5,12 @@ import Auth from '../utils/Auth';
 import Login from '../pages/Login';
 
 function SignUpForm() {
-    const [formState, setFormState] = useState({
+    let [formState, setFormState] = useState({
         username: '',
         email: '',
         password: ''
     });
-    const [addUser, { error }] = useMutation(ADD_USER);
+    let [addUser, { error }] = useMutation(ADD_USER);
 
     // submit form 
     const handleFormSubmit = async (event) => {
@@ -18,8 +18,13 @@ function SignUpForm() {
         // use try/catch instead of promises to handle errors
         try {
             // execute addUser mutation and pass in variable data from form
+            const username = event.target.username.value
+            const email = event.target.email.value
+            const password = event.target.password.value
+            setFormState(formState = { username, email, password })
+            console.log(formState)
             const { data } = await addUser({
-                variables: { ...formState }
+                variables: formState
             });
 
             Auth.login(data.addUser.token);
@@ -28,16 +33,14 @@ function SignUpForm() {
         }
     };
 
-
-
     return (
         <div className="Auth-form-container">
-            <form className="Auth-form">
+            <form className="Auth-form" onSubmit={handleFormSubmit}>
                 <div className="Auth-form-content">
                     <h3 className="Auth-form-title">Sign Up</h3>
                     <div className="text-center">
                         Already registered?{" "}
-                        <span className="link-primary" onClick={<Login />}>
+                        <span className="link-primary" onClick={Login}>
                             Sign In
                         </span>
                     </div>
@@ -47,6 +50,7 @@ function SignUpForm() {
                             type="input"
                             className="form-control mt-1"
                             placeholder="e.g Jane Doe"
+                            name="username"
                         />
                     </div>
                     <div className="form-group mt-3">
@@ -55,6 +59,7 @@ function SignUpForm() {
                             type="email"
                             className="form-control mt-1"
                             placeholder="Email Address"
+                            name="email"
                         />
                     </div>
                     <div className="form-group mt-3">
@@ -63,6 +68,7 @@ function SignUpForm() {
                             type="password"
                             className="form-control mt-1"
                             placeholder="Password"
+                            name="password"
                         />
                     </div>
                     <div className="d-grid gap-2 mt-3">
@@ -71,7 +77,7 @@ function SignUpForm() {
                         </button>
                     </div>
                     <p className="text-center mt-2">
-                        Forgot <a href="#">password?</a>
+                        Forgot <a href="/">password?</a>
                     </p>
                 </div>
             </form>
