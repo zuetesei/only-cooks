@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/Mutations';
-import Auth from '../utils/Auth';
+import Auth from '../utils/auth';
 import Login from '../pages/Login';
 
 function SignUpForm() {
@@ -33,6 +33,8 @@ function SignUpForm() {
         }
     };
 
+
+
     return (
         <div className="Auth-form-container">
             <form className="Auth-form" onSubmit={handleFormSubmit}>
@@ -40,7 +42,7 @@ function SignUpForm() {
                     <h3 className="Auth-form-title">Sign Up</h3>
                     <div className="text-center">
                         Already registered?{" "}
-                        <span className="link-primary" onClick={Login}>
+                        <span className="link-primary">
                             Sign In
                         </span>
                     </div>
@@ -69,6 +71,7 @@ function SignUpForm() {
                             className="form-control mt-1"
                             placeholder="Password"
                             name="password"
+
                         />
                     </div>
                     <div className="d-grid gap-2 mt-3">
@@ -77,7 +80,7 @@ function SignUpForm() {
                         </button>
                     </div>
                     <p className="text-center mt-2">
-                        Forgot <a href="/">password?</a>
+                        Forgot <a href="#">password?</a>
                     </p>
                 </div>
             </form>

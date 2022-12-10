@@ -10,7 +10,7 @@ import UserRecipes from '../components/UserRecipes';
 function UserProfile() {
 
     return (
-        <Container className="profile">
+        <Container className="my-5">
             <Row>
                 <Col sm={4}>
                     <UserCard />
@@ -18,8 +18,10 @@ function UserProfile() {
 
                 </Col>
                 <Col sm={4}>
+
                     <UserRecipes />
                 </Col>
+
                 <Col sm={4}>
                     <div>
                         <FriendList />

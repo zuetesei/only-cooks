@@ -1,49 +1,37 @@
 import React, { useState } from "react"
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/Mutations';
-import Auth from '../utils/Auth';
+import Auth from '../utils/auth';
 import Signup from '../pages/Signup';
 
 const Login = (props) => {
-    const [formState, setFormState] = useState({
-        email: '',
-        password: ''
-    });
-    const [login, { error }] = useMutation(LOGIN_USER);
+  let [formState, setFormState] = useState({
+    email: '',
+    password: ''
+  });
+  const [login, { error }] = useMutation(LOGIN_USER);
 
-    // update state based on form input changes
-    const handleChange = (event) => {
-        const { name, value } = event.target;
+  // update state based on form input changes
+  
+  // submit form
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    setFormState(formState={email: event.target.email.value,password: event.target.password.value})
 
-        setFormState({
-            ...formState,
-            [name]: value,
-        });
-    };
+    console.log('running')
 
-    // submit form
-    const handleFormSubmit = async (event) => {
-        event.preventDefault();
-        // event.target.reset()
-        console.log('running')
+    try {
+      const { data } = await login({
+        variables: { ...formState }
+      });
 
-        try {
-            const { data } = await login({
-                variables: { ...formState }
-            });
-
-            Auth.login(data.login.token);
-        } catch (e) {
-            console.error(e);
-        }
-
-        // clear form values
-        setFormState({
-            email: '',
-            password: '',
-        });
-    };
-
+      Auth.login(data.login.token);
+    } catch (e) {
+      console.log(formState)
+      console.error(e);
+    }
+  }
+    // if (authMode === 'signin') {}
     return (
         <div className="Auth-form-container">
             <form name="login" className="Auth-form" onSubmit={handleFormSubmit}>
@@ -85,7 +73,7 @@ const Login = (props) => {
             </form>
             {error && <div>Login failed</div>}
         </div>
-    )
-}
+  );
+};
 
 export default Login;
