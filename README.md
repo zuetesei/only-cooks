@@ -1,4 +1,4 @@
-# OnlyCooks
+# Only Cooks
 
 ## Table of Contents
 
