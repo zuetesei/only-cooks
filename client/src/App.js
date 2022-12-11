@@ -20,7 +20,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles/Signup.css";
 import "./styles/Navbar.css";
 import "./styles/Footer.css";
-import Auth from "./utils/auth";
+import Auth from "./utils/Auth";
 
 const httpLink = createHttpLink({
   uri: "http://localhost:3001/graphql",
@@ -50,7 +50,6 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         {Auth.loggedIn() ? <LoggedInNav /> : <Nav />}
-        {/* <Nav /> */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/signup" element={<Signup />} />
@@ -64,6 +63,5 @@ function App() {
     </ApolloProvider >
   )
 };
-
 
 export default App;

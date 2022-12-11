@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import ReorderIcon from '@material-ui/icons/Reorder';
-import Auth from '../../utils/auth'
+import Auth from '../../utils/Auth'
 import Logo from "../../assets/logo.png";
 
 function LoggedInNavbar() {
