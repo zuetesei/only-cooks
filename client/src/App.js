@@ -14,7 +14,6 @@ import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import Signup from "./pages/Signup";
 import About from "./pages/About";
-import Recipe from "./pages/SingleRecipe";
 import SavedRecipes from "./pages/UserRecipes";
 import Profile from "./pages/Profile";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -47,17 +46,16 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   return (
-    
+
     <ApolloProvider client={client}>
       <Router>
         {Auth.loggedIn() ? <LoggedInNav /> : <Nav />}
         {/* <Nav /> */}
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/about" element={<About />} />
-          <Route path="/recipe/id" element={<Recipe />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/savedrecipes" element={<SavedRecipes />} />
           <Route path="/profile" element={<Profile />} />
         </Routes>
@@ -69,18 +67,3 @@ function App() {
 
 
 export default App;
-
-
-/*
-          <Route
-            path="/"
-            exact
-            render={() => (
-              <UserList list={this.state.list} addFavorite={this.addFavorite} />
-            )}
-          />
-          <Route
-            path="/favorites"
-            render={() => <FavoriteList favorites={this.state.favorites} />}
-          />
-*/
